@@ -1,0 +1,22 @@
+services:
+  dev:
+    build:
+      context: .
+      args:
+        UID: "1000"
+        GID: "1000"
+    image: quadruped-stack:humble
+    network_mode: host
+    ipc: host
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - .:/ws
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+    working_dir: /ws
+    stdin_open: true
+    tty: true
+    command: bash
