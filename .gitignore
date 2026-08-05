@@ -1,0 +1,73 @@
+# ---- Local config and private notes (never published) -----------------------
+CLAUDE.md
+AGENTS.md
+.claude/
+.claude.json
+.mcp.json
+docs/PLAN.md
+notes/
+private/
+
+# ---- ROS 2 / colcon ---------------------------------------------------------
+build/
+install/
+log/
+.colcon_install_layout
+*.colcon_workspace
+
+# External repos imported by vcstool (deps.repos) - pinned by SHA, not vendored
+src/external/
+
+# ---- C++ / CMake ------------------------------------------------------------
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+*.o
+*.a
+*.so
+*.so.*
+*.d
+
+# ---- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- MATLAB -----------------------------------------------------------------
+*.asv
+*.m~
+*.mat
+*.mex*
+*.slxc
+slprj/
+codegen/
+
+# ---- Recorded data, bags, maps (big, and Git is bad at them) ----------------
+*.bag
+*.db3
+*.mcap
+rosbag2_*/
+metadata.yaml
+*.pcd
+*.ply
+*.las
+data/
+datasets/
+results/raw/
+
+# ---- Docker / env -----------------------------------------------------------
+.env
+*.env.local
+
+# ---- Editors / OS -----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
