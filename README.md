@@ -13,7 +13,7 @@ claimed before it runs.
 | Component | State |
 |---|---|
 | `matlab/` — closed-form leg FK / IK / analytic Jacobian | working, asserted by `verify_phase01` |
-| Docker + ROS 2 Humble development environment | in progress |
+| Docker + ROS 2 Humble development environment | working — digest-pinned image, `colcon build` verified |
 | `leg_kinematics` — C++/Eigen port as a ROS 2 package | planned |
 | gtest regression suite + CI | planned |
 | Unitree SDK adapter against `unitree_mujoco` | planned |
