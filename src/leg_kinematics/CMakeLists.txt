@@ -10,6 +10,7 @@ find_package(Eigen3 REQUIRED)
 
 # The kinematics core: header-only, Eigen only, no ROS.
 add_library(leg_kinematics INTERFACE)
+target_compile_features(leg_kinematics INTERFACE cxx_std_17)
 
 target_include_directories(leg_kinematics INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
