@@ -7,6 +7,10 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 # The kinematics core: header-only, Eigen only, no ROS.
 add_library(leg_kinematics INTERFACE)
@@ -23,6 +27,14 @@ install(TARGETS leg_kinematics EXPORT export_leg_kinematics)
 
 ament_export_targets(export_leg_kinematics HAS_LIBRARY_TARGET)
 ament_export_dependencies(Eigen3)
+
+add_executable(foot_position_node src/foot_position_node.cpp)
+target_link_libraries(foot_position_node leg_kinematics)
+ament_target_dependencies(foot_position_node
+  rclcpp sensor_msgs geometry_msgs tf2_ros)
+
+install(TARGETS foot_position_node DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY config launch DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
