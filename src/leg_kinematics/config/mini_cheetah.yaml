@@ -1,0 +1,35 @@
+# Mini-Cheetah-class quadruped.
+# Values transcribed from matlab/params_quad.m, which is the reference model.
+foot_position_node:
+  ros__parameters:
+    base_frame: "base_link"
+    legs: ["FL", "FR", "RL", "RR"]
+
+    # Link geometry, shared by all four legs (m)
+    l_abad: 0.062
+    l_thigh: 0.209
+    l_calf: 0.195
+
+    # Joint limits and nominal stance, [q1 HAA; q2 HFE; q3 KFE] (rad)
+    q_min: [-0.90, -1.70, -2.60]
+    q_max: [0.90, 1.70, -0.20]
+    q_nominal: [0.0, 0.80, -1.60]
+
+    # Per-leg: abduction sign, hip mount in the body frame, and the joint names
+    # this leg's angles arrive under on /joint_states.
+    FL:
+      abad_sign: 1.0
+      hip: [0.19, 0.049, 0.0]
+      joints: ["FL_hip_joint", "FL_thigh_joint", "FL_calf_joint"]
+    FR:
+      abad_sign: -1.0
+      hip: [0.19, -0.049, 0.0]
+      joints: ["FR_hip_joint", "FR_thigh_joint", "FR_calf_joint"]
+    RL:
+      abad_sign: 1.0
+      hip: [-0.19, 0.049, 0.0]
+      joints: ["RL_hip_joint", "RL_thigh_joint", "RL_calf_joint"]
+    RR:
+      abad_sign: -1.0
+      hip: [-0.19, -0.049, 0.0]
+      joints: ["RR_hip_joint", "RR_thigh_joint", "RR_calf_joint"]
