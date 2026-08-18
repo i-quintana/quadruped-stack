@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>leg_kinematics</name>
+  <version>0.1.0</version>
+  <description>
+    Closed-form forward and inverse kinematics for a 3-DOF quadruped leg,
+    as a header-only Eigen library plus a ROS 2 node. Ported from the MATLAB
+    reference implementation in matlab/src/1_kinematics.
+  </description>
+  <maintainer email="ignacio.quintanac@gmail.com">Ignacio Quintana</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>eigen</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+  <exec_depend>ros2launch</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+
